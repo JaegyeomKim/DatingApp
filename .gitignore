@@ -1,7 +1,8 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
-
+/DatingAppAPI/DatingAppAPI/Debug/net7.0/
+/DatingAppAPI/DatingAppAPI/obj/Debug/net7.0/
 /DatingAppAPI/.vs/DatingAppAPI/v17/.futdcache.v2
 /DatingAppAPI/.vs/DatingAppAPI/v17/.suo
 /.vs/DatingApp/FileContentIndex
@@ -28,3 +29,17 @@
 /DatingAppAPI/DatingAppAPI/obj/Debug/net7.0/DatingAppAPI.pdb
 /.vs
 /Client/.vscode
+/DatingAppAPI/DatingAppAPI/bin/Debug/net7.0/appsettings.Development.json
+/DatingAppAPI/DatingAppAPI/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+/DatingAppAPI/DatingAppAPI/bin/Debug/net7.0/DatingAppAPI.deps.json
+/DatingAppAPI/DatingAppAPI/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/DatingAppAPI/DatingAppAPI/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/DatingAppAPI/DatingAppAPI/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/DatingAppAPI/DatingAppAPI/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/DatingAppAPI/DatingAppAPI/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/DatingAppAPI/DatingAppAPI/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+/DatingAppAPI/DatingAppAPI/obj/Debug/net7.0/ref/DatingAppAPI.dll
+/DatingAppAPI/DatingAppAPI/obj/Debug/net7.0/refint/DatingAppAPI.dll
+/DatingAppAPI/DatingAppAPI/obj/Debug/net7.0/DatingAppAPI.AssemblyInfo.cs
+/DatingAppAPI/DatingAppAPI/obj/Debug/net7.0/DatingAppAPI.csproj.AssemblyReference.cache
+/DatingAppAPI/DatingAppAPI/obj/Debug/net7.0/DatingAppAPI.csproj.CoreCompileInputs.cache

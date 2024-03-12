@@ -1,10 +1,12 @@
 ﻿using DatingAppAPI.Data;
 using DatingAppAPI.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatingAppAPI.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")] // /api/users
     public class UsersController : Controller
@@ -15,7 +17,7 @@ namespace DatingAppAPI.Controllers
         {
             _context = context;
         }
-        
+        [AllowAnonymous] 
         [HttpGet]
         public async Task<IEnumerable<AppUser>> GetUsers()
         {
