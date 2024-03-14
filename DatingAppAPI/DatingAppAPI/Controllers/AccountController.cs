@@ -10,9 +10,7 @@ using System.Text;
 
 namespace DatingAppAPI.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class AccountController : Controller
+    public class AccountController : BaseApiController
     {
         private readonly DataContext _dataContext;
         private readonly ITokenService _tokenService;
