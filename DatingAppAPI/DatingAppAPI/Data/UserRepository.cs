@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatingAppAPI.Data
 {
+    // Minimize duplicate query logic
+    // All Database queries are centralised
     public class UserRepository : IUserRepository
     {
         private readonly DataContext _context;
@@ -46,14 +48,12 @@ namespace DatingAppAPI.Data
             _context.Entry(user).State = EntityState.Modified;
         }
 
-
         public async Task<MemberDto> GetMemberAsync(string username)
         {
             return await _context.Users
             .Where(x => x.UserName == username)
             .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
             .SingleOrDefaultAsync();
-
         }
 
         //public async Task<MemberDto> GetMemberAsync(string username)

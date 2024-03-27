@@ -30,7 +30,6 @@ namespace DatingAppAPI.Data
 
                 context.Users.Add(user);
             }
-
             await context.SaveChangesAsync();
         }
     }
