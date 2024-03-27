@@ -11,7 +11,6 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 ApplicationServiceExtensions.AddApplicationServices(builder.Services, builder.Configuration);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -44,6 +43,7 @@ app.UseAuthorization();
 app.UseHttpsRedirection();
 app.MapControllers();
 
+// Give us all of the access to all of the service that we have inside this program.cs 
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
 try
@@ -55,7 +55,7 @@ try
 catch (Exception ex)
 {
     var logger = services.GetService<ILogger<Program>>();
-    logger.LogError(ex, "An error occurred during migration");
+    logger.LogError(ex, "An error occurred during Seed data migration");
 }
 
 app.Run();
