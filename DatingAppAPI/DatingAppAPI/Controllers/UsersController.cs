@@ -37,7 +37,7 @@ namespace DatingAppAPI.Controllers
             
             return user;
         }
-        [HttpPost]
+        [HttpPut]
         public async Task<ActionResult> UpdateUser(MemberUpdatedDto memberUpdatedDto)
         {
             var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
