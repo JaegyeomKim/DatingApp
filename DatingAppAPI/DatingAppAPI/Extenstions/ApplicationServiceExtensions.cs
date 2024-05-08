@@ -1,4 +1,5 @@
 ﻿using DatingAppAPI.Data;
+using DatingAppAPI.Helpers;
 using DatingAppAPI.Interfaces;
 using DatingAppAPI.Services;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,8 @@ namespace DatingAppAPI.Extenstions
             // GetAssemblies(): Return all assemblies loaded in the current AppDomain.
             // an assembly is the unit of execution in .Net, typically consisting of compiled code in DLL or EXE files.
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
+            services.AddScoped<IPhotoService, PhotoService>();
             return services;
         }
     }

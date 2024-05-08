@@ -23,11 +23,5 @@ namespace DatingAppAPI.Entities
         public List<Photo> Photos { get; set; } = new();
 
         public string DateOfBirthFormatted => DateOfBirth.ToString("yyyy-MM-dd");
-
-        // 'Get' is important for AutoMapper -> public int Age { get; set; }
-        //public int GetAge()
-        //{
-        //    return DateOfBirth.CalculateAge();
-        //}
     }
 }
