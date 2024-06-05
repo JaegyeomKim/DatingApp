@@ -1,0 +1,32 @@
+version: '3.4'
+
+networks:
+    datingapp_api_db_network:
+
+services:
+  demodb:
+    container_name: app-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+    - 8002:1433
+    environment:
+    - ACCEPT_EULA=Y
+    - MSSQL_SA_PASSWORD=Password@12345#
+    networks:
+    - datingapp_api_db_network
+  datingappapi:
+    container_name: demo-dating-app
+    image: ${DOCKER_REGISTRY-}datingappapi
+    build:
+      context: .
+      dockerfile: DatingAppAPI/Dockerfile
+    ports:
+    - 8000:80
+    depends_on:
+    - demodb
+    environment:
+    - DB_HOST=demodb
+    - DB_NAME=dating-app-db-docker
+    - DB_SA_PASSWORD=Password@12345#
+    networks:
+    - datingapp_api_db_network

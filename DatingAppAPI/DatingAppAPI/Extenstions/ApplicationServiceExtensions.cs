@@ -11,9 +11,14 @@ namespace DatingAppAPI.Extenstions
         public static IServiceCollection AddApplicationServices (this IServiceCollection services,
             IConfiguration config)
         {
+            var dbHost = Environment.GetEnvironmentVariable("DB_HOST");
+            var dbName = Environment.GetEnvironmentVariable("DB_NAME");
+            var dbPassword = Environment.GetEnvironmentVariable("DB_SA_PASSWORD");
+            var connectionString = $"Data Source={dbHost};Initial Catalog={dbName};User ID=sa;Password={dbPassword};TrustServerCertificate=true";
+
             services.AddDbContext<DataContext>(opt =>
             {
-                opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+                opt.UseSqlServer(connectionString);
             });
             services.AddCors();
             services.AddScoped<ITokenService, TokenService>();

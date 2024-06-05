@@ -12,7 +12,6 @@ using System.Security.Claims;
 
 namespace DatingAppAPI.Controllers
 {
-    [Authorize]
     public class UsersController : BaseApiController
     {
         private readonly IUserRepository _userRepository;
